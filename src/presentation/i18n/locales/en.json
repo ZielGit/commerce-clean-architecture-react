@@ -1,0 +1,47 @@
+{
+  "common": {
+    "loading": "Loading...",
+    "error": "Error",
+    "save": "Save",
+    "cancel": "Cancel",
+    "delete": "Delete",
+    "edit": "Edit",
+    "view": "View",
+    "back": "Back",
+    "search": "Search",
+    "pageNotFound": "Page not found",
+    "backToHome": "Back to Home"
+  },
+  "auth": {
+    "login": "Sign In",
+    "logout": "Sign Out",
+    "email": "Email",
+    "password": "Password",
+    "signInToAccount": "Sign in to your account"
+  },
+  "products": {
+    "title": "Products",
+    "create": "Create Product",
+    "edit": "Edit Product",
+    "delete": "Delete Product",
+    "name": "Name",
+    "price": "Price",
+    "currency": "Currency",
+    "stock": "Stock",
+    "active": "Active",
+    "inactive": "Inactive",
+    "outOfStock": "Out of stock",
+    "empty": "No products found",
+    "notFound": "Product not found",
+    "searchPlaceholder": "Search products...",
+    "filters": "Filters",
+    "minPrice": "Min Price",
+    "maxPrice": "Max Price",
+    "onlyInStock": "Only in stock",
+    "onlyActive": "Only active",
+    "clearFilters": "Clear filters",
+    "deleteConfirmTitle": "Delete Product",
+    "deleteConfirmMessage": "Are you sure you want to delete this product? This action cannot be undone.",
+    "editStockOnly": "In edit mode, only the stock can be updated."
+  }
+}

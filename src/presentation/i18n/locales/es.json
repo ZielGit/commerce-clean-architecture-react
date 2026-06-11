@@ -1,0 +1,47 @@
+{
+  "common": {
+    "loading": "Cargando...",
+    "error": "Error",
+    "save": "Guardar",
+    "cancel": "Cancelar",
+    "delete": "Eliminar",
+    "edit": "Editar",
+    "view": "Ver",
+    "back": "Volver",
+    "search": "Buscar",
+    "pageNotFound": "Página no encontrada",
+    "backToHome": "Volver al inicio"
+  },
+  "auth": {
+    "login": "Iniciar Sesión",
+    "logout": "Cerrar Sesión",
+    "email": "Correo Electrónico",
+    "password": "Contraseña",
+    "signInToAccount": "Inicia sesión en tu cuenta"
+  },
+  "products": {
+    "title": "Productos",
+    "create": "Crear Producto",
+    "edit": "Editar Producto",
+    "delete": "Eliminar Producto",
+    "name": "Nombre",
+    "price": "Precio",
+    "currency": "Moneda",
+    "stock": "Stock",
+    "active": "Activo",
+    "inactive": "Inactivo",
+    "outOfStock": "Sin stock",
+    "empty": "No se encontraron productos",
+    "notFound": "Producto no encontrado",
+    "searchPlaceholder": "Buscar productos...",
+    "filters": "Filtros",
+    "minPrice": "Precio Mínimo",
+    "maxPrice": "Precio Máximo",
+    "onlyInStock": "Solo con stock",
+    "onlyActive": "Solo activos",
+    "clearFilters": "Limpiar filtros",
+    "deleteConfirmTitle": "Eliminar Producto",
+    "deleteConfirmMessage": "¿Estás seguro de que deseas eliminar este producto? Esta acción no se puede deshacer.",
+    "editStockOnly": "En modo edición, solo se puede actualizar el stock."
+  }
+}
