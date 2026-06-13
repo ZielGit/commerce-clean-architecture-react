@@ -1,6 +1,6 @@
 import { Product } from '../../domain/entities/Product';
 import { Money } from '../../domain/valueObjects/Money';
-import { ProductDto } from '../dto/ProductDto';
+import type { ProductDto } from '../dto/ProductDto';
 
 /**
  * Mapper para convertir entre DTOs y Entidades de Dominio
