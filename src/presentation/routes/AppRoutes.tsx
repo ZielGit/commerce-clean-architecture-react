@@ -4,6 +4,7 @@ import { PrivateRoute } from './PrivateRoute';
 import { MainLayout } from '../layouts/MainLayout';
 import { AuthLayout } from '../layouts/AuthLayout';
 import { LoginPage } from '../pages/auth/LoginPage';
+import { RegisterPage } from '../pages/auth/RegisterPage';
 import { ProductListPage } from '../pages/products/ProductListPage';
 import { ProductDetailPage } from '../pages/products/ProductDetailPage';
 import { ProductCreatePage } from '../pages/products/ProductCreatePage';
@@ -16,6 +17,7 @@ export const AppRoutes: React.FC = () => {
       {/* Public Routes */}
       <Route element={<AuthLayout />}>
         <Route path="/login" element={<LoginPage />} />
+        <Route path="/register" element={<RegisterPage />} />
       </Route>
 
       {/* Private Routes */}

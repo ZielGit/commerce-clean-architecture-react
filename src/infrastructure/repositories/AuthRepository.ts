@@ -2,6 +2,8 @@ import type { IAuthRepository } from '../../domain/repositories/IAuthRepository'
 import { User } from '../../domain/entities/User';
 import type { LoginDto } from '../../application/dto/LoginDto';
 import type { LoginResponseDto } from '../../application/dto/LoginResponseDto';
+import type { RegisterDto } from '../../application/dto/RegisterDto';
+import type { RegisterResponseDto } from '../../application/dto/RegisterResponseDto';
 import type { UserDto } from '../../application/dto/UserDto';
 import { httpClient } from '../api/client/httpClient';
 import { endpoints } from '../api/endpoints';
@@ -22,6 +24,16 @@ export class AuthRepository implements IAuthRepository {
     const user = UserMapper.toDomain(response.user);
 
     return { token: response.token, user };
+  }
+
+  async register(data: RegisterDto): Promise<User> {
+    const response = await httpClient.post<RegisterResponseDto>(
+      endpoints.auth.register,
+      data
+    );
+
+    // El registro no devuelve token (no autologuea); solo crea la cuenta
+    return UserMapper.toDomain(response);
   }
 
   async logout(): Promise<void> {

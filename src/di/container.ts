@@ -8,6 +8,7 @@ import { UpdateProductUseCase } from '../application/useCases/products/UpdatePro
 import { DeleteProductUseCase } from '../application/useCases/products/DeleteProductUseCase';
 import { SearchProductsUseCase } from '../application/useCases/products/SearchProductsUseCase';
 import { LoginUseCase } from '../application/useCases/auth/LoginUseCase';
+import { RegisterUseCase } from '../application/useCases/auth/RegisterUseCase';
 import { LogoutUseCase } from '../application/useCases/auth/LogoutUseCase';
 
 /**
@@ -59,6 +60,10 @@ class DIContainer {
 
   getLoginUseCase(): LoginUseCase {
     return new LoginUseCase(this.authRepository);
+  }
+
+  getRegisterUseCase(): RegisterUseCase {
+    return new RegisterUseCase(this.authRepository);
   }
 
   getLogoutUseCase(): LogoutUseCase {
