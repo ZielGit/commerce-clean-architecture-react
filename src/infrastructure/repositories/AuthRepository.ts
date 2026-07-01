@@ -2,6 +2,7 @@ import type { IAuthRepository } from '../../domain/repositories/IAuthRepository'
 import { User } from '../../domain/entities/User';
 import type { LoginDto } from '../../application/dto/LoginDto';
 import type { LoginResponseDto } from '../../application/dto/LoginResponseDto';
+import type { UserDto } from '../../application/dto/UserDto';
 import { httpClient } from '../api/client/httpClient';
 import { endpoints } from '../api/endpoints';
 import { TokenStorage } from '../storage/TokenStorage';
@@ -38,12 +39,7 @@ export class AuthRepository implements IAuthRepository {
         return null;
       }
 
-      const response = await httpClient.get<{
-        id: string;
-        email: string;
-        name: string;
-        roles: string[];
-      }>(endpoints.auth.me);
+      const response = await httpClient.get<UserDto>(endpoints.auth.me);
 
       return UserMapper.toDomain(response);
     } catch {

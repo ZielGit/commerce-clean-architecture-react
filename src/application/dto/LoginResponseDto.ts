@@ -1,9 +1,6 @@
+import type { UserDto } from './UserDto';
+
 export interface LoginResponseDto {
   token: string;
-  user: {
-    id: string;
-    email: string;
-    name: string;
-    roles: string[];
-  };
+  user: UserDto;
 }

@@ -6,14 +6,28 @@ import { DomainException } from '../exceptions/DomainException';
 export class User {
   public readonly id: string;
   public readonly email: string;
-  public readonly name: string;
-  public readonly roles: string[];
+  public readonly firstName: string;
+  public readonly lastName: string;
+  public readonly role: string;
+  public readonly createdAt: Date;
+  public readonly updatedAt?: Date;
 
-  constructor(id: string, email: string, name: string, roles: string[]) {
+  constructor(
+    id: string,
+    email: string,
+    firstName: string,
+    lastName: string,
+    role: string,
+    createdAt: Date,
+    updatedAt?: Date,
+  ) {
     this.id = id;
     this.email = email;
-    this.name = name;
-    this.roles = roles;
+    this.firstName = firstName;
+    this.lastName = lastName;
+    this.role = role;
+    this.createdAt = createdAt;
+    this.updatedAt = updatedAt;
 
     this.validate();
   }
@@ -23,22 +37,30 @@ export class User {
       throw new DomainException('Invalid email format');
     }
 
-    if (!this.name || this.name.trim().length === 0) {
-      throw new DomainException('User name cannot be empty');
+    if (!this.firstName || this.firstName.trim().length === 0) {
+      throw new DomainException('User firstName cannot be empty');
+    }
+
+    if (!this.lastName || this.lastName.trim().length === 0) {
+      throw new DomainException('User lastName cannot be empty');
+    }
+
+    if (!this.role || this.role.trim().length === 0) {
+      throw new DomainException('User role cannot be empty');
     }
   }
 
   /**
-   * Verifica si el usuario tiene un rol específico
+   * Retorna el nombre completo del usuario
    */
-  hasRole(role: string): boolean {
-    return this.roles.includes(role);
+  get fullName(): string {
+    return `${this.firstName} ${this.lastName}`;
   }
 
   /**
-   * Verifica si es administrador
+   * Verifica si el usuario es administrador
    */
   isAdmin(): boolean {
-    return this.hasRole('admin');
+    return this.role === 'admin';
   }
 }
