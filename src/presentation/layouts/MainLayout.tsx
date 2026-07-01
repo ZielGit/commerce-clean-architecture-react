@@ -65,7 +65,7 @@ export const MainLayout: React.FC = () => {
               {/* User Info */}
               {user && (
                 <span className="hidden sm:block text-sm text-gray-600">
-                  {user.name}
+                  {user.fullName}
                 </span>
               )}
 
