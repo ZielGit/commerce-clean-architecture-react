@@ -13,7 +13,7 @@ interface InputProps {
   name?: string;
 }
 
-export const Input: React.FC<InputProps> = ({
+export const Input = React.forwardRef<HTMLInputElement, InputProps>(({
   label,
   type = 'text',
   placeholder,
@@ -24,7 +24,7 @@ export const Input: React.FC<InputProps> = ({
   disabled = false,
   className = '',
   name,
-}) => {
+}, ref) => {
   const inputClasses = `block w-full px-3 py-2 border rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 disabled:bg-gray-100 disabled:cursor-not-allowed ${
     error ? 'border-red-500' : 'border-gray-300'
   }`;
@@ -38,6 +38,7 @@ export const Input: React.FC<InputProps> = ({
         </label>
       )}
       <input
+        ref={ref}
         type={type}
         name={name}
         placeholder={placeholder}
@@ -50,4 +51,6 @@ export const Input: React.FC<InputProps> = ({
       {error && <p className="mt-1 text-sm text-red-600">{error}</p>}
     </div>
   );
-};
+});
+
+Input.displayName = 'Input';
