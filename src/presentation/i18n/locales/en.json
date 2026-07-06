@@ -17,7 +17,14 @@
     "logout": "Sign Out",
     "email": "Email",
     "password": "Password",
-    "signInToAccount": "Sign in to your account"
+    "signInToAccount": "Sign in to your account",
+    "register": "Sign Up",
+    "createAccount": "Create your account",
+    "firstName": "First Name",
+    "lastName": "Last Name",
+    "confirmPassword": "Confirm Password",
+    "noAccount": "Don't have an account?",
+    "alreadyHaveAccount": "Already have an account?"
   },
   "products": {
     "title": "Products",

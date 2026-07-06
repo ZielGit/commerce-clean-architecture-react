@@ -17,7 +17,14 @@
     "logout": "Cerrar Sesión",
     "email": "Correo Electrónico",
     "password": "Contraseña",
-    "signInToAccount": "Inicia sesión en tu cuenta"
+    "signInToAccount": "Inicia sesión en tu cuenta",
+    "register": "Registrarse",
+    "createAccount": "Crea tu cuenta",
+    "firstName": "Nombre",
+    "lastName": "Apellido",
+    "confirmPassword": "Confirmar Contraseña",
+    "noAccount": "¿No tienes una cuenta?",
+    "alreadyHaveAccount": "¿Ya tienes una cuenta?"
   },
   "products": {
     "title": "Productos",
