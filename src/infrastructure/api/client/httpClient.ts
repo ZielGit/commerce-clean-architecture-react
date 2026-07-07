@@ -77,8 +77,9 @@ class HttpClient {
       // Si no puede parsear JSON, usar mensaje por defecto
     }
 
-    // Si es 401, limpiar token y redirigir a login
-    if (response.status === 401) {
+    // Si es 401 en una sesión ya autenticada, limpiar token y redirigir a login
+    // (un 401 en el propio login son credenciales inválidas, no una sesión expirada)
+    if (response.status === 401 && TokenStorage.hasToken()) {
       TokenStorage.clearToken();
       window.location.href = '/login';
     }
