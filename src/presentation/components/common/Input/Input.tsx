@@ -45,7 +45,6 @@ export const Input = React.forwardRef<HTMLInputElement, InputProps>(({
         value={value}
         onChange={onChange}
         disabled={disabled}
-        required={required}
         className={inputClasses}
       />
       {error && <p className="mt-1 text-sm text-red-600">{error}</p>}
