@@ -20,7 +20,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({
   const { t } = useTranslation();
 
   return (
-    <Card hoverable className="flex flex-col justify-between h-full">
+    <Card hoverable className="product-card flex flex-col justify-between h-full">
       {/* Status Badge */}
       <div className="flex justify-between items-start mb-3">
         <span
