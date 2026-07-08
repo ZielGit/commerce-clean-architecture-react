@@ -1,7 +1,10 @@
 import { test, expect } from '@playwright/test';
+import { mockApi } from './mocks/apiMocks';
 
 test.describe('Products CRUD', () => {
   test.beforeEach(async ({ page }) => {
+    await mockApi(page);
+
     // Login before each test
     await page.goto('/login');
     await page.fill('input[type="email"]', 'admin@test.com');
@@ -44,11 +47,14 @@ test.describe('Products CRUD', () => {
   });
 
   test('should delete a product', async ({ page }) => {
-    await page.click('text=Delete >> nth=0');
+    // Nota: se usa getByRole con nombre exacto porque "text=Delete" también
+    // matchea el título del modal ("Delete Product"), desplazando los índices.
+    const deleteButtons = page.getByRole('button', { name: 'Delete', exact: true });
+    await deleteButtons.nth(0).click();
 
     // Confirm modal
     await expect(page.locator('text=Are you sure')).toBeVisible();
-    await page.click('text=Delete >> nth=1');
+    await deleteButtons.nth(1).click();
 
     await expect(page.locator('text=Product deleted successfully')).toBeVisible();
   });

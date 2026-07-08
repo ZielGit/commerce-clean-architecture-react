@@ -1,6 +1,11 @@
 import { test, expect } from '@playwright/test';
+import { mockApi } from './mocks/apiMocks';
 
 test.describe('Authentication', () => {
+  test.beforeEach(async ({ page }) => {
+    await mockApi(page);
+  });
+
   test('should redirect to login when not authenticated', async ({ page }) => {
     await page.goto('/products');
     await expect(page).toHaveURL('/login');
